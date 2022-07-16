@@ -1,25 +1,22 @@
-
-import "../App.css";
 import handleInitialData from "../actions/shared";
 import { useEffect } from "react";
 import { connect } from "react-redux";
+import LoginForm from "./LoginForm";
 
 function App(props) {
 	useEffect(() => {
 		props.dispatch(handleInitialData());
 	}, []);
 
-    console.log(props)
-
 	return (
 		<div className="App">
-			<p>React Project</p>
+			{props.isLoggedIn === true ? <LoginForm /> : "Homepage"}
 		</div>
 	);
 }
 
-const mapStateToProps = ({authedUser}) => ({
-    pageStatus: authedUser  
-})
+const mapStateToProps = ({ authedUser }) => ({
+	isLoggedIn: authedUser === null,
+});
 
 export default connect(mapStateToProps)(App);

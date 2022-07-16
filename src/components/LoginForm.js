@@ -6,7 +6,6 @@
  *    Availability: https://codepen.io/Mohuth/pen/QWgrPvp
  ***************************************************************************************/
 
-import "../App.css";
 import { useState } from "react";
 import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";

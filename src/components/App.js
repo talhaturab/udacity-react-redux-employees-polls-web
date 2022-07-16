@@ -2,6 +2,8 @@ import handleInitialData from "../actions/shared";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import LoginForm from "./LoginForm";
+import Dashboard from "./Dashboard";
+import "../App.css";
 
 function App(props) {
 	useEffect(() => {
@@ -9,8 +11,8 @@ function App(props) {
 	}, []);
 
 	return (
-		<div className="App">
-			{props.isLoggedIn === true ? <LoginForm /> : "Homepage"}
+		<div>
+			{props.isLoggedIn === true ? <LoginForm /> : <Dashboard />}
 		</div>
 	);
 }

@@ -18,12 +18,10 @@ const LoginForm = (props) => {
 
 	const handleUsernameChange = (e) => {
 		setUsername(e.target.value);
-		console.log(username);
 	};
 
 	const handlePasswordChange = (e) => {
 		setPassword(e.target.value);
-		console.log(password);
 	};
 
 	const handleSubmit = (e) => {

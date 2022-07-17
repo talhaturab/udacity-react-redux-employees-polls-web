@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import "../App.css";
 import Nav from "./Nav";
 import UserProfile from "./UserProfile";
+import CreatePoll from "./CreatePoll";
 
 function App(props) {
 	useEffect(() => {
@@ -19,10 +20,11 @@ function App(props) {
 				<LoginForm />
 			) : (
 				<div>
-                    <Nav />
-                    <UserProfile />
+					<Nav />
+					<UserProfile />
 					<Routes>
 						<Route path="/" exact element={<Dashboard />} />
+						<Route path="/add" element={<CreatePoll />} />
 					</Routes>
 				</div>
 			)}

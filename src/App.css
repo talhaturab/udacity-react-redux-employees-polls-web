@@ -176,3 +176,11 @@ li {
 }
 
 /** User Profile CSS*/
+
+/** CreatePoll CSS*/
+.create-poll-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/** CreatePoll CSS*/

@@ -154,7 +154,7 @@ li {
 /** Nav CSS*/
 
 .nav-links {
-    display: flex;
+	display: flex;
 }
 
 /** Nav CSS*/
@@ -163,7 +163,7 @@ li {
 .profile-container {
 	margin: 10px;
 	display: flex;
-    align-items: center;
+	align-items: center;
 }
 .avatar {
 	vertical-align: middle;
@@ -172,15 +172,59 @@ li {
 	border-radius: 50%;
 }
 .profile-container-item {
-    margin: 10px;
+	margin: 10px;
 }
 
 /** User Profile CSS*/
 
 /** CreatePoll CSS*/
-.create-poll-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.create-poll-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 /** CreatePoll CSS*/
+
+/** ShowPoll CSS*/
+
+.showpoll-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.poll-user-avatar {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.optionContainer {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	text-transform: capitalize;
+}
+
+.poll-option {
+	padding: 10px;
+	border: 2px solid black;
+}
+
+.option-btn {
+	color: white;
+	font-weight: 700;
+	background: none;
+	background-color: gray;
+}
+
+button:disabled,
+button[disabled] {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+	cursor: not-allowed !important;
+}
+
+/** ShowPoll CSS*/

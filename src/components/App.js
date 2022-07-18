@@ -8,6 +8,8 @@ import "../App.css";
 import Nav from "./Nav";
 import UserProfile from "./UserProfile";
 import CreatePoll from "./CreatePoll";
+import ShowPoll from "./ShowPoll";
+import ErrorPage from "./ErrorPage";
 
 function App(props) {
 	useEffect(() => {
@@ -25,6 +27,8 @@ function App(props) {
 					<Routes>
 						<Route path="/" exact element={<Dashboard />} />
 						<Route path="/add" element={<CreatePoll />} />
+						<Route path="/questions/:id" element={<ShowPoll />} />
+                        <Route path="/errorPage" element={<ErrorPage />} />
 					</Routes>
 				</div>
 			)}

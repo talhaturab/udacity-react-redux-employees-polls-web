@@ -3,7 +3,7 @@ let users = {
 		id: "sarahedo",
 		password: "password123",
 		name: "Sarah Edo",
-		avatarURL: "https://i.pravatar.cc/300",
+		avatarURL: "https://cdn.pixabay.com/photo/2017/08/28/17/16/portrait-2690465_960_720.jpg",
 		answers: {
 			"8xf0y6ziyjabvozdd253nd": "optionOne",
 			"6ni6ok3ym7mf1p33lnez": "optionOne",

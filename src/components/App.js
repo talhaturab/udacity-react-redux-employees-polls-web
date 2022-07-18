@@ -10,6 +10,7 @@ import UserProfile from "./UserProfile";
 import CreatePoll from "./CreatePoll";
 import ShowPoll from "./ShowPoll";
 import ErrorPage from "./ErrorPage";
+import Leaderboard from "./Leaderboard";
 
 function App(props) {
 	useEffect(() => {
@@ -28,7 +29,8 @@ function App(props) {
 						<Route path="/" exact element={<Dashboard />} />
 						<Route path="/add" element={<CreatePoll />} />
 						<Route path="/questions/:id" element={<ShowPoll />} />
-                        <Route path="/errorPage" element={<ErrorPage />} />
+						<Route path="/errorPage" element={<ErrorPage />} />
+						<Route path="/leaderboard" element={<Leaderboard />} />
 					</Routes>
 				</div>
 			)}

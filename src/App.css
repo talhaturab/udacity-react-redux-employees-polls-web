@@ -228,3 +228,18 @@ button[disabled] {
 }
 
 /** ShowPoll CSS*/
+
+/** leaderboard CSS*/
+
+.user-table-body{
+    text-align: center;
+}
+
+.user-table-data {
+	margin: 0 35%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/** leaderboard CSS*/

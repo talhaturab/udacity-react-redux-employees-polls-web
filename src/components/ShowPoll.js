@@ -35,13 +35,19 @@ const ShowPoll = (props) => {
 			: "optionTwo";
 	}
 
-    const optionOneVotes = question.optionOne.votes.length
-    const optionTwoVotes = question.optionTwo.votes.length
-    const totalVotes = optionOneVotes + optionTwoVotes
-    const votePercentage = {
-        voteOne: (optionOneVotes / totalVotes * 100).toFixed(0) + "%",
-        voteTwo: (optionTwoVotes / totalVotes * 100).toFixed(0) + "%",
-    }
+	const optionOneVotes = question.optionOne.votes.length;
+	const optionTwoVotes = question.optionTwo.votes.length;
+	const totalVotes = optionOneVotes + optionTwoVotes;
+	const votePercentage = {
+		voteOne:
+			optionOneVotes !== 0
+				? ((optionOneVotes / totalVotes) * 100).toFixed(0) + "%"
+				: "0%",
+		voteTwo:
+			optionTwoVotes !== 0
+				? ((optionTwoVotes / totalVotes) * 100).toFixed(0) + "%"
+				: "0%",
+	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -83,7 +89,7 @@ const ShowPoll = (props) => {
 					)}
 					<p>Number of votes</p>
 					<span>{question.optionOne.votes.length}</span>
-                    <p>Vote Percetage = {votePercentage.voteOne}</p>
+					<p>Vote Percetage = {votePercentage.voteOne}</p>
 				</form>
 				<form className="poll-option">
 					<p>{question.optionTwo.text}</p>
@@ -104,7 +110,7 @@ const ShowPoll = (props) => {
 					)}
 					<p>Number of votes</p>
 					<span>{question.optionTwo.votes.length}</span>
-                    <p>Vote Percetage = {votePercentage.voteTwo}</p>
+					<p>Vote Percetage = {votePercentage.voteTwo}</p>
 				</form>
 			</div>
 		</div>

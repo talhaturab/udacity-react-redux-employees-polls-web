@@ -29,14 +29,14 @@ const LoginForm = (props) => {
 		const user = props.users[username];
 
 		if (user && user.password === password) {
-            setErrorMessage(false);
+			setErrorMessage(false);
 			setSuccessMessage(true);
-            props.dispatch(setAuthedUser(user.id));
+			props.dispatch(setAuthedUser(user.id));
 			setUsername("");
 			setPassword("");
 		} else {
 			setErrorMessage(true);
-            setSuccessMessage(false);
+			setSuccessMessage(false);
 		}
 	};
 
@@ -45,12 +45,17 @@ const LoginForm = (props) => {
 			<div className="screen">
 				<h1>Login to see Polls</h1>
 				{errorMessage && (
-					<h1>The Login Credentials are wrong. Please try Again</h1>
+					<h1 data-testid="error-header">
+						The Login Credentials are wrong. Please try Again
+					</h1>
 				)}
-				{successMessage && <h1>LogIn Success!</h1>}
+				{successMessage && (
+					<h1 data-testid="success-header">LogIn Success!</h1>
+				)}
 				<form className="login" onSubmit={handleSubmit}>
 					<div className="login__field">
 						<input
+							data-testid="username"
 							type="text"
 							value={username}
 							className="login__input"
@@ -60,14 +65,16 @@ const LoginForm = (props) => {
 					</div>
 					<div className="login__field">
 						<input
+							data-testid="password"
 							type="password"
-                            value={password}
+							value={password}
 							className="login__input"
 							placeholder="Password"
 							onChange={handlePasswordChange}
 						/>
 					</div>
 					<button
+                        data-testid="submit-btn"
 						className="button login__submit"
 						type="submit"
 						disabled={username === "" || password === ""}

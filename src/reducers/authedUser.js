@@ -1,4 +1,4 @@
-import { SET_AUTHED_USER } from "../actions/authedUser";
+import { SET_AUTHED_USER, SET_DEFAULT_USER } from "../actions/authedUser";
 import { LOG_OUT_USER } from "../actions/authedUser";
 
 export default function authedUser(state = null, action) {

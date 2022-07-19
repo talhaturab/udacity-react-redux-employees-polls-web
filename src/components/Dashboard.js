@@ -1,22 +1,44 @@
 import { connect } from "react-redux";
 import ListItemPoll from "./ListItemPoll";
+import { useState } from "react";
 
 const Dashboard = (props) => {
+    const [showAnswered, setShowAnswered] = useState(false)
+    const [showUnanswered, setShowUnanswered] = useState(true)
+
+    const showAnsweredPolls = (e) => {
+        e.preventDefault();
+        setShowAnswered(true)
+        setShowUnanswered(false)
+    }
+
+    const showUnansweredPolls = (e) => {
+        e.preventDefault();
+        setShowAnswered(false)
+        setShowUnanswered(true)
+    }
+
 	return (
 		<div className="center">
 			<h1 className="center">Dashboard</h1>
+            <div>
+                <button style={{ margin: "10px" }} onClick={showAnsweredPolls}>Show Answered Questions</button>
+                <button style={{ margin: "10px" }} onClick={showUnansweredPolls}>Show UnAnswered Questions</button>
+            </div>
 			<div>
-				<h1>New Questions</h1>
+				<h1>UnAnswered Questions</h1>
 				<ul className="flex-container">
-					{props.unansweredPolls.map((poll) => (
+					{showUnanswered &&
+                    props.unansweredPolls.map((poll) => (
 						<ListItemPoll item={poll} key={poll.id} />
 					))}
 				</ul>
 			</div>
 			<div>
-				<h1>Done</h1>
+				<h1>Answered Questions</h1>
 				<ul className="flex-container">
-					{props.answeredPolls.map((poll) => (
+					{showAnswered &&
+                    props.answeredPolls.map((poll) => (
 						<ListItemPoll item={poll} key={poll.id} />
 					))}
 				</ul>
